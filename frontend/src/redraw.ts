@@ -14,7 +14,7 @@ export async function redraw(
   burningShipState: BurningShipState ,
 ) {
 
-    // マンデルブロ集合を描画
+    // バーニングシップフラクタルを描画
     await loadBurningShip(
       burningShipCanvas,
       burningShipState.cx,
