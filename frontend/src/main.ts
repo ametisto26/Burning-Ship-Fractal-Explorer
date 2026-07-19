@@ -244,7 +244,7 @@ window.addEventListener("keydown", (event) => {
       `c${burningShipState.cx.toFixed(10)}_${burningShipState.cy.toFixed(10)}`
 
   const burningShipZoom =
-      `m${burningShipState.scale.toFixed(0)}`
+      `x${burningShipState.scale.toFixed(0)}`
 
   const weight =
     `rw${burningShipState.realWeight.toFixed(2)}` + `_iw${burningShipState.imagWeight.toFixed(2)}`
