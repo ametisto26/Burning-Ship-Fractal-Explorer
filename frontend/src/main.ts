@@ -25,66 +25,85 @@ app.innerHTML = `
   <div class="controls">
 
     <section class="panel">
-      <h2>Mandelbrot Set</h2>
 
-      <h3>Mandelbrot parameter</h3>
-
-      <label>View center</label>
-
-      <div class="row">
-        <span>Re(z):</span>
-        <input id="cx" value="-0.75">
-      </div>
-
-      <div class="row">
-        <span>Im(z):</span>
-        <input id="cy" value="0.1">
-      </div>
-
-      <div class="row">
-        <span>Scale:</span>
-        <input id="scale" value="1">
-      </div>
-
-      <button id="draw">
-        Draw
-      </button>
-    </section>
-
-    <section class="panel">
-
-      <h2>Julia Set</h2>
-
-      <h3>Julia parameter</h3>
-
-      <div class="row">
-        <span>Re(c):</span>
-        <span id="julia-re">-0.75</span>
-      </div>
-
-      <div class="row">
-        <span>Im(c):</span>
-        <span id="julia-im">0.10</span>
-      </div>
+      <h2>Burning Ship</h2>
 
       <h3>View center</h3>
 
       <div class="row">
-        <span>Re(z):</span>
-        <input id="julia-cx" value="0.0">
+        <span>Re(c):</span>
+        <input
+          id="cx"
+          value="-0.5"
+        >
       </div>
 
       <div class="row">
-        <span>Im(z):</span>
-        <input id="julia-cy" value="0.0">
+        <span>Im(c):</span>
+        <input
+          id="cy"
+          value="-0.5"
+        >
       </div>
 
       <div class="row">
         <span>Scale:</span>
         <input
-          id="julia-scale"
+          id="scale"
           value="1"
         >
+      </div>
+
+      <h3>Weights</h3>
+
+      <div class="row">
+        <span>Real:</span>
+        <input
+          id="real-weight"
+          value="1.0"
+        >
+      </div>
+
+      <div class="row">
+        <span>Imag:</span>
+        <input
+          id="imag-weight"
+          value="1.0"
+        >
+      </div>
+
+      <button id="draw">
+        Draw
+      </button>
+
+      <div class="row">
+
+        <span>Color:</span>
+
+        <select id="color-map">
+
+          <option value="twilight">
+            Twilight
+          </option>
+
+          <option value="classic">
+            Classic
+          </option>
+
+          <option value="fire">
+            Fire
+          </option>
+
+          <option value="ocean">
+            Ocean
+          </option>
+
+          <option value="grayscale">
+            Grayscale
+          </option>
+
+        </select>
+
       </div>
 
       <div class="row">
@@ -102,34 +121,13 @@ app.innerHTML = `
         <span id="iterations">--</span>
       </div>
 
-      <button id="julia-home">
-          Home
-      </button>
-
-      <div class="row">
-        <span>Color:</span>
-
-        <select id="color-map">
-          <option value="twilight">Twilight</option>
-          <option value="classic">Classic</option>
-          <option value="fire">Fire</option>
-          <option value="ocean">Ocean</option>
-          <option value="grayscale">Grayscale</option>
-        </select>
-      </div>
     </section>
 
   </div>
 
   <div class="viewer">
 
-    <div>
-      <canvas id="mandelbrot"></canvas>
-    </div>
-
-    <div>
-      <canvas id="julia"></canvas>
-    </div>
+    <canvas id="burning-ship"></canvas>
 
   </div>
 `
