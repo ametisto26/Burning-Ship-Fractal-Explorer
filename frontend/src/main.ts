@@ -57,7 +57,7 @@ app.innerHTML = `
       <h3>Weights</h3>
 
       <div class="row">
-        <span>Real:</span>
+        <span>Re:</span>
         <input
           id="real-weight"
           value="1.0"
@@ -65,7 +65,7 @@ app.innerHTML = `
       </div>
 
       <div class="row">
-        <span>Imag:</span>
+        <span>Im:</span>
         <input
           id="imag-weight"
           value="1.0"
@@ -198,7 +198,7 @@ setupZoom(
 )
 
 // ----------
-// 共通操作
+// 描画・保存
 // ----------
 // Drawボタンによる再描画
 setupDraw(
@@ -243,8 +243,11 @@ window.addEventListener("keydown", (event) => {
   const burningShipZoom =
       `m${burningShipState.scale.toFixed(0)}`
 
+  const weight =
+    `rw${burningShipState.realWeight.toFixed(2)}` + `_iw${burningShipState.imagWeight.toFixed(2)}`
+
   const burningShipName =
-      `burningShip_${parameter}_${burningShipZoom}.png`
+      `burningShip_${parameter}_${weight}_${burningShipZoom}.png`
 
   saveCanvas(
     burningShipCanvas,

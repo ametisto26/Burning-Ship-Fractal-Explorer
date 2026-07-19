@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+#app {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 24px;
+}
+
+.panel {
+  width: 320px;
+  padding: 16px;
+  border: 1px solid #666;
+  border-radius: 8px;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.panel h3 {
+  margin-bottom: 8px;
+  border-bottom: 1px solid #999;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.row input {
+  width: 170px;
+}
+
+.viewer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.viewer canvas {
+  border: 1px solid #666;
+}
+
+.viewer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  border: 1px solid #888;
+  width: 640px;
+  height: 640px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.3);
+}
+
+label {
+  margin-right: 12px;
+}
+
+input{
+    width:120px;
+}
+
+button{
+    padding:8px 18px;
+    border-radius:8px;
+    cursor:pointer;
+}
