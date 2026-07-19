@@ -22,112 +22,115 @@ const app =
 app.innerHTML = `
   <h1>Burning Ship Explorer</h1>
 
-  <div class="controls">
+  <div class="layout">
 
-    <section class="panel">
+    <div class="controls">
 
-      <h2>Burning Ship</h2>
+      <section class="panel">
 
-      <h3>View center</h3>
+        <h2>Burning Ship</h2>
 
-      <div class="row">
-        <span>Re(c):</span>
-        <input
-          id="cx"
-          value="-0.5"
-        >
-      </div>
+        <h3>View center</h3>
 
-      <div class="row">
-        <span>Im(c):</span>
-        <input
-          id="cy"
-          value="-0.5"
-        >
-      </div>
+        <div class="row">
+          <span>Re(c):</span>
+          <input
+            id="cx"
+            value="-0.5"
+          >
+        </div>
 
-      <div class="row">
-        <span>Scale:</span>
-        <input
-          id="scale"
-          value="1"
-        >
-      </div>
+        <div class="row">
+          <span>Im(c):</span>
+          <input
+            id="cy"
+            value="-0.5"
+          >
+        </div>
 
-      <h3>Weights</h3>
+        <div class="row">
+          <span>Scale:</span>
+          <input
+            id="scale"
+            value="1"
+          >
+        </div>
 
-      <div class="row">
-        <span>Re:</span>
-        <input
-          id="real-weight"
-          value="1.0"
-        >
-      </div>
+        <h3>Weights</h3>
 
-      <div class="row">
-        <span>Im:</span>
-        <input
-          id="imag-weight"
-          value="1.0"
-        >
-      </div>
+        <div class="row">
+          <span>Re:</span>
+          <input
+            id="real-weight"
+            value="1.0"
+          >
+        </div>
 
-      <button id="draw">
-        Draw
-      </button>
+        <div class="row">
+          <span>Im:</span>
+          <input
+            id="imag-weight"
+            value="1.0"
+          >
+        </div>
 
-      <div class="row">
+        <button id="draw">
+          Draw
+        </button>
 
-        <span>Color:</span>
+        <div class="row">
 
-        <select id="color-map">
+          <span>Color:</span>
 
-          <option value="twilight">
-            Twilight
-          </option>
+          <select id="color-map">
 
-          <option value="classic">
-            Classic
-          </option>
+            <option value="twilight">
+              Twilight
+            </option>
 
-          <option value="fire">
-            Fire
-          </option>
+            <option value="classic">
+              Classic
+            </option>
 
-          <option value="ocean">
-            Ocean
-          </option>
+            <option value="fire">
+              Fire
+            </option>
 
-          <option value="grayscale">
-            Grayscale
-          </option>
+            <option value="ocean">
+              Ocean
+            </option>
 
-        </select>
+            <option value="grayscale">
+              Grayscale
+            </option>
 
-      </div>
+          </select>
 
-      <div class="row">
-        <span>Render:</span>
-        <span id="render-time">--</span>
-      </div>
+        </div>
 
-      <div class="row">
-        <span>Resolution:</span>
-        <span id="resolution">--</span>
-      </div>
+        <div class="row">
+          <span>Render:</span>
+          <span id="render-time">--</span>
+        </div>
 
-      <div class="row">
-        <span>Iterations:</span>
-        <span id="iterations">--</span>
-      </div>
+        <div class="row">
+          <span>Resolution:</span>
+          <span id="resolution">--</span>
+        </div>
 
-    </section>
+        <div class="row">
+          <span>Iterations:</span>
+          <span id="iterations">--</span>
+        </div>
 
-  </div>
+      </section>
 
-  <div class="viewer">
+    </div>
 
-    <canvas id="burning-ship"></canvas>
+    <div class="viewer">
+
+      <canvas id="burning-ship"></canvas>
+    </div>
 
   </div>
 `

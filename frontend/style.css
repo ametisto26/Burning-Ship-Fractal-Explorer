@@ -16,11 +16,14 @@ h1 {
   margin-bottom: 24px;
 }
 
-.controls {
+.layout {
   display: flex;
-  justify-content: center;
-  gap: 48px;
-  margin-bottom: 24px;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.controls {
+  flex-shrink: 0;
 }
 
 .panel {
@@ -51,19 +54,13 @@ h1 {
 }
 
 .viewer {
+  flex: 1;
   display: flex;
   justify-content: center;
-  gap: 24px;
 }
 
 .viewer canvas {
   border: 1px solid #666;
-}
-
-.viewer > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 canvas {
