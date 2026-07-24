@@ -11,6 +11,9 @@ dist/
 # TeX
 *.aux
 *.synctex.gz
+*.dvi
+*.fls
+*.fdb_latexmk
 
 # IDE
 .vscode/
