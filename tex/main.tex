@@ -1,0 +1,222 @@
+\documentclass[12pt]{jsarticle}
+%\pagestyle{empty}
+
+%パッケージ%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amssymb,amsthm,verbatim, mathtools}
+\usepackage{titlesec}%セクション立てするために導入した.
+\usepackage[dvipdfmx]{graphicx}%図を挿れるために導入した.
+\usepackage[dvipdfmx]{color}
+\usepackage{ascmac}%itemboxのために導入した.
+\usepackage[all]{xy}%図式を描くとき
+\usepackage{bm}%太字
+
+\usepackage{otf}
+
+%以下、定義や定理の整備%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat*{\section}{\large}%セクションの文字サイズを大きくする.
+\titleformat*{\subsection}{\large}
+
+\numberwithin{equation}{section}%数式にセクション番号を入れる.
+
+\renewcommand{\proofname}{\rm \textbf{証明}}%証明の書式設定
+
+
+\allowdisplaybreaks[4] %数式中の改ページを許可
+
+
+\newtheorem{thm}{定理}[section]%propを定義しつつ、セクション番号を反映させている.
+\newtheorem{dfn}[thm]{定義}%defを定義し、propの形式を踏襲した.
+\newtheorem{prop}[thm]{命題} 
+\newtheorem{lem}[thm]{補題}
+\newtheorem{cor}[thm]{系}
+\newtheorem{exam}[thm]{例}
+\newtheorem{rem}[thm]{注意}
+
+
+\newtheorem*{thm*}{定理}
+
+
+\newtheorem{ackn}{\bf{Acknowledgment}} 
+
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item\relax
+  {%\itshape
+  #1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+
+
+%以下、記号の整備%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%特殊文字の省略を定義する.
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\Rn}{\mathbb{R}^n} %ユークリッド空間
+\newcommand{\Rnn}{\mathbb{R}^{n} \times \Rn}
+\newcommand{\Nzero}{\mathbb{Z}_+} %非負整数の集合
+\newcommand{\multi}{\Nzero^n} %多重指数の集合
+
+\newcommand{\Cinf}{C^{\infty}} %無限回微分可能な関数の集合
+\newcommand{\CinfRn}{C^{\infty}(\mathbb{R}^n)} %無限回微分可能な関数の集合
+
+
+\newcommand{\Cinfzero}{C_0^{\infty}}
+\newcommand{\CinfzeroRn}{C_0^{\infty}(\mathbb{R}^n)}
+
+
+
+\newcommand{\Lp}{L^p} %ルベーグ空間
+\newcommand{\LpRn}{L^p(\mathbb{R}^n)} %ルベーグ空間  p
+
+\newcommand{\Lq}{L^q} %ルベーグ空間
+\newcommand{\LqRn}{L^q(\mathbb{R}^n)} %ルベーグ空間  q
+
+
+\newcommand{\sch}{\mathcal{S}}%急減少関数の空間
+
+
+\newcommand{\bra}[1]{\left\langle #1\right\rangle}%ブラケット
+\newcommand{\bran}[1]{\langle #1\rangle}
+
+
+\newcommand{\del}{\partial}%偏微分記号ラウンド
+\newcommand{\supp}{\mathrm{supp}}%台
+
+
+\newcommand{\lap}{\Delta}%ラプラシアン
+
+\newcommand{\adj}[1]{#1^t}%共役作用素の記号
+\newcommand{\for}[1]{#1^{\ast}}%形式的共役作用素の記号
+
+
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\c}{\gamma}
+\renewcommand{\d}{\delta}
+\newcommand{\e}{\varepsilon}
+\newcommand{\h}{\eta}
+\newcommand{\f}{\varphi}
+\renewcommand{\k}{\kappa}
+\renewcommand{\l}{\lambda}
+\newcommand{\m}{\mu}
+\newcommand{\p}{\pi}
+\newcommand{\ps}{\psi}
+\renewcommand{\r}{\rho}
+\newcommand{\s}{\sigma}
+\renewcommand{\t}{\tau}
+\newcommand{\x}{\xi}
+
+
+\newcommand{\G}{\varGamma}
+
+
+\renewcommand{\th}{\theta}
+
+\newcommand{\fre}{Fr\'{e}chet}%フレシェ
+\newcommand{\fou}{Fourier}%フーリエ
+\newcommand{\fub}{Fubini}%フビニ
+\newcommand{\lei}{Leibniz}%ライプニッツ
+\newcommand{\fred}{Fredholm}%フレドホルム
+\newcommand{\pla}{Plancherel}%プランシュレル
+\newcommand{\bana}{Banach}%バナッハ
+\newcommand{\atkin}{Atkinson}%アトキンソン
+\newcommand{\schw}{Schwarz}%シュワルツ
+\newcommand{\bolz}{Bolzano-Weierstrass}%ボルツァノ-ワイエルストラウス
+\newcommand{\leb}{Lebesgue}%ルベーグ
+\newcommand{\hol}{H\"{o}lder}%ヘルダー
+\newcommand{\mink}{Minkowski}%ミンコフスキー
+
+
+\newcommand{\sob}{Sobolev}
+
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+
+\newcommand{\absn}[1]{\lvert#1\rvert}
+
+
+\newcommand{\intRn}{\int_{\Rn}} %全空間での積分
+\newcommand{\conv}[2]{#1 \ast #2} %合成積
+
+
+\newcommand{\ove}[1]{\overline{#1}}
+
+
+
+
+
+
+
+\newcommand{\summation}[2]{\sum_{#1=1}^{#2}}
+
+\newcommand{\oneto}[1]{1, 2, \ldots, #1} %1,2,...,??
+\newcommand{\onetoindex}[2]{#1_1, #1_2, \ldots, #1_#2} %x1,x2,...x?
+\newcommand{\coord}[2]{(#1_1, #1_2, \ldots, #1_#2)} %添え字付きの組
+
+
+
+%ここから文章が始まる。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%タイトル%
+\title{Burning Ship フラクタルのメモ}
+\author{}
+\date{}
+\maketitle
+
+%Chap.1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{仮セクション}
+
+記載予定……。
+
+%%%%%%%%%%%表示テスト用
+\section{表示テスト}
+
+ここに文章が入る。
+
+\begin{gather}
+\abs{c} = \norm{\x} \\
+\conv{a}{b} \in \Cinf_0(\Rn) \\
+\Rn = \{ \coord{x}{n} \mid x_j \in \R , \, j = \oneto{n} \} 
+\end{gather}
+
+
+
+
+
+
+
+
+
+%参考文献
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{9}
+
+\bibitem{test} 表示テスト
+%\bibitem{fujita} 藤田宏，黒田成俊，伊藤清三，関数解析，岩波書店，1991.
+
+\end{thebibliography}
+
+\end{document}
+
+

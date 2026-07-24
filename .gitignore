@@ -8,6 +8,10 @@ __pycache__/
 node_modules/
 dist/
 
+# TeX
+*.aux
+*.synctex.gz
+
 # IDE
 .vscode/
 .idea/
